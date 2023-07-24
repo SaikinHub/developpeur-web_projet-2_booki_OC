@@ -1,162 +1,377 @@
-/****** General ***********/
-* {
-    font-family: 'Raleway', sans-serif;
-}
-
 :root {
-    --main-color: #0065FC;
-    --main-bg-color: #F2F2F2;
-    --filter-bg-color: #DEEBFF;
+  /* COLORS */
+  --clr-primary-400: #0065fc;
+  --clr-secondary-400: #deebff;
+  --clr-bg-400: #d9d9d9;
+  --clr-bg-200: #f2f2f2;
+  --clr-bg-100: #ffff;
+
+  /* FONTS */
+  --ff-base: "Raleway", sans-serif;
+
+  /* FONT WEIGHTS */
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* FONT SIZE */
+  --fs-200: 14px;
+  --fs-400: 16px;
+  --fs-600: 18px;
+  --fs-900: 22px;
 }
 
-.fa-solid {
-    color: var(--main-color);
+/* general styling */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    display: flex;
-    justify-content: center;
+  background-color: var(--clr-bg-100);
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  color: black;
 }
 
-.main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
-    box-sizing: border-box;
+/* HEADER */
+
+.header_wrapper {
+  border-bottom: 2px solid var(--clr-bg-400);
+  display: grid;
 }
 
-.section-title {
-    margin: 0;
-    font-size: 22px;
+.header_logo {
+  width: 61px;
+  margin: 2rem auto;
 }
 
-.card {
-    background-color: white;
-    border-radius: 20px;
-    padding: 5px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+.header_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
 }
 
-.card img {
-    object-fit: cover;
+.header_list li {
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
 }
 
-.card-title {
-    font-size: 16px;
+.header_list li:hover {
+  border-bottom: 2px solid var(--clr-primary-400);
 }
 
-.euro {
-    font-weight: 700;
+a:hover {
+  color: var(--clr-primary-400);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* PRIMARY SECTION */
+
+.hebergements-and-populaires {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.primary_wrapper {
+  padding: 2rem 1.25rem;
+  display: grid;
+  gap: 2.1rem;
+}
+
+.primary_heading {
+  font-size: var(--fs-900);
+  line-height: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.primary_form {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  background: var(--clr-bg-100);
+  border: 1px solid var(--clr-bg-400);
+  height: 3rem;
+  width: 100%;
+}
+
+.location-icon-container {
+  display: grid;
+  place-content: center;
+  background: var(--clr-bg-400);
+  width: 3rem;
+  aspect-ratio: 1;
+  /* border-radius: 1rem 0 0 1rem; */
+}
+
+.primary_input {
+  border: none;
+  flex: 1;
+}
+
+.search-icon-container {
+  display: grid;
+  place-content: center;
+  background: var(--clr-primary-400);
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: inherit;
+  /* box-shadow: 0 4px 4px var(--clr-bg-400); */
+}
+
+.search-icon {
+  color: white;
+}
+
+.tablet-and-pc {
+  display: none;
+}
+
+.filters_heading {
+  margin-bottom: 1.2rem;
+}
+
+.filters_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.filters_list li {
+  display: flex;
+  font-size: var(--fs-200);
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: start;
+  border-radius: 2rem;
+  border: 2px solid var(--clr-bg-400);
+  padding: 0.7rem 1.2rem;
+  flex: 1;
+  font-weight: var(--fw-bold);
+}
+
+.filters_list-icon,
+.info-icon,
+.graph-icon,
+.fa-star {
+  color: var(--clr-primary-400);
+}
+
+.filters_list-icon::before {
+  height: 22px;
 }
 
 .neutral-star {
-    color: var(--main-bg-color)
+  color: var(--clr-bg-200);
 }
 
-/****** Hebergements And Populaires ***********/
-.hebergements-and-populaires {
-    display: flex;
-    justify-content: space-between;
+.primary_info-group {
+  display: flex;
+  gap: 0.6rem;
 }
 
-.hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
+.info-icon-container {
+  display: grid;
+  place-content: center;
+  height: 1.5rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--clr-bg-400);
+  border-radius: 100%;
 }
 
-/****** Hebergements ***********/
-.hebergements {
-    width: 65%;
-}
+/* POPULAIRES */
 
-/****** Populaires ***********/
 .populaires {
-    width: 32%;
+  background: var(--clr-bg-400);
+}
+.populaires_wrapper {
+  padding: 1.9rem 1.2rem;
 }
 
 .populaires-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.95rem;
+}
+
+.populaires-cards {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--clr-bg-100);
+  border-radius: 1.1rem;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: var(--fs-400);
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+}
+
+.card-subtitle {
+  font-size: var(--fs-200);
+}
+
+.card--horizontal {
+  display: flex;
+}
+
+.card--horizontal img {
+  border-radius: 0.8rem 0 0 0.8rem;
+  object-fit: cover;
+  width: 110px;
+  height: 140px;
+  padding: 0.3rem;
+}
+
+.card-content {
+  display: grid;
+  place-content: space-between;
+  padding-inline: 0.8rem;
+}
+
+/* HEBERGEMENTS */
+
+.hebergements_wrapper {
+  padding: 1.2rem;
+}
+.hebergements_wrapper h2 {
+  margin-bottom: 0.9rem;
+}
+
+.hebergements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card--vertical {
+  box-shadow: 0 3px 15px var(--clr-bg-400);
+  padding: 0.3rem;
+}
+
+.card--vertical img {
+  width: 335px;
+  height: 124px;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.afficher-plus {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+  margin-top: 1.2rem;
+}
+
+/* ACTIVITE SECTION */
+
+.activites_wrapper {
+  padding: 1.9rem;
+}
+
+.activites_wrapper h2 {
+  margin-bottom: 1.9rem;
+}
+
+.activites section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.card--vertical-secondary {
+  box-shadow: 0 3px 15px var(--clr-bg-400);
+  /* width: 315px; */
+  width: 100%;
+}
+.card--vertical-secondary img {
+  width: 100%;
+  height: 141px;
+}
+
+.card--vertical-secondary h3 {
+  padding: 1.5rem;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--clr-bg-400);
+}
+
+.footer_wrapper {
+  padding: 1.9rem;
+}
+
+.footer_wrapper nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.footer_list-group h3 {
+  font-size: var(--fs-600);
+  margin-bottom: 0.6rem;
+}
+
+.footer_list-group ul {
+  display: grid;
+  gap: 0.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .header_wrapper {
+    padding: 1rem 3.1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+  }
 
-.populaires-cards .card {
-    display: flex;
-    margin-top: 33px;
-}
-
-.populaires-cards img {
-    width: 33%;
-    height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.populaires-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
+  .header_logo {
     margin: 0;
-}
+  }
 
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
-}
+  .header_list {
+    grid-auto-flow: ;
+  }
 
+  .primary_form {
+    width: 377px;
+  }
 
+  .search-icon {
+    display: none;
+  }
 
+  .tablet-and-pc {
+    display: block;
+    color: var(--clr-bg-100);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-600);
+  }
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
+  .search-icon-container {
+    border-radius: 0;
+    width: 100%;
+  }
 
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
-    .hebergements-and-populaires {
-        flex-direction: column;
-    }
+  .filters_list li {
+    flex: none;
+  }
 
-    .hebergements {
-        width: 100%;
-    }
+  .info-icon::before {
+    height: 10px;
+  }
 
-    .populaires {
-        width: 100%;
-        margin-top: 50px;
-    }
+  /* PRIMARY SECTION */
 
-    .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .populaires-cards .card {
-        width: 30%;
-    }
-
-    .populaires-cards .card-title {
-        font-size: 14px;
-    }
-
-    .populaires-cards .card-subtitle {
-        font-size: 13px;
-    }
-}
-
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
+  .hebergements-and-populaires {
+    flex-direction: column;
+  }
 }
