@@ -38,24 +38,22 @@ body {
 
 .header_wrapper {
   border-bottom: 2px solid var(--clr-bg-400);
-  display: grid;
 }
 
 .header_logo {
+  object-fit: contain;
   width: 61px;
-  margin: 2rem auto;
+  margin: 2rem auto 2rem;
 }
 
 .header_list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
+  display: flex;
 }
 
 .header_list li {
-  padding: 1rem 0;
-  width: 100%;
+  flex: 1;
   text-align: center;
+  padding-bottom: 0.8rem;
 }
 
 .header_list li:hover {
@@ -78,7 +76,6 @@ a {
 }
 
 .primary_wrapper {
-  padding: 2rem 1.25rem;
   display: grid;
   gap: 2.1rem;
 }
@@ -111,6 +108,7 @@ a {
 .primary_input {
   border: none;
   flex: 1;
+  padding-left: 1.2rem;
 }
 
 .search-icon-container {
@@ -184,11 +182,18 @@ a {
 
 /* POPULAIRES */
 
-.populaires {
-  background: var(--clr-bg-400);
-}
+/* .catalog {
+  display: grid;
+  gap: 2.188rem;
+  margin: 2.188rem 0;
+} */
+
 .populaires_wrapper {
   padding: 1.9rem 1.2rem;
+}
+
+.populaires {
+  background: var(--clr-bg-200);
 }
 
 .populaires-title {
@@ -240,9 +245,10 @@ a {
 /* HEBERGEMENTS */
 
 .hebergements_wrapper {
-  padding: 1.2rem;
+  margin: 1.9rem 1.2rem;
 }
-.hebergements_wrapper h2 {
+
+.hebergements-title {
   margin-bottom: 0.9rem;
 }
 
@@ -266,13 +272,13 @@ a {
 .afficher-plus {
   font-size: var(--fs-600);
   font-weight: var(--fw-bold);
-  margin-top: 1.2rem;
+  margin: 1.1rem 0;
 }
 
 /* ACTIVITE SECTION */
 
 .activites_wrapper {
-  padding: 1.9rem;
+  padding: 1rem 0.63rem;
 }
 
 .activites_wrapper h2 {
@@ -302,11 +308,15 @@ a {
 /* FOOTER */
 
 footer {
-  background: var(--clr-bg-400);
+  background: var(--clr-bg-200);
+}
+
+.wrapper {
+  margin: 1.9rem 1.2rem;
 }
 
 .footer_wrapper {
-  padding: 1.9rem;
+  padding: 1.5rem 0.63rem;
 }
 
 .footer_wrapper nav {
@@ -327,18 +337,28 @@ footer {
 
 @media screen and (min-width: 1024px) {
   .header_wrapper {
-    padding: 1rem 3.1rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    border: none;
+    margin-inline: 3.1rem;
   }
 
   .header_logo {
-    margin: 0;
+    margin-inline: 0;
   }
 
   .header_list {
-    grid-auto-flow: ;
+    gap: 3rem;
+  }
+
+  .header_list li {
+    padding-top: 0.8rem;
+    padding-bottom: 0;
+  }
+
+  .header_list li:hover {
+    border-top: 2px solid var(--clr-primary-400);
+    border-bottom: none;
   }
 
   .primary_form {
@@ -371,7 +391,129 @@ footer {
 
   /* PRIMARY SECTION */
 
+  .wrapper {
+    margin: 1rem 3.1rem;
+  }
+
   .hebergements-and-populaires {
     flex-direction: column;
+  }
+
+  /* HEBERGEMENTS */
+
+  .hebergements_wrapper {
+    background: var(--clr-bg-200);
+    border-radius: 0.9rem;
+    padding: 1.9rem;
+    margin-inline: 3.1rem;
+  }
+
+  .hebergements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.9rem;
+  }
+
+  .hebergements-title {
+    margin-bottom: 1.9rem;
+  }
+
+  .afficher-plus {
+    margin: 1.9rem 0 0;
+  }
+
+  /* POPULAIRES */
+
+  .populaires {
+    background: inherit;
+  }
+
+  .populaires_wrapper {
+    background: var(--clr-bg-200);
+    height: 100%;
+  }
+
+  .populaires_wrapper {
+    margin-inline: 3.1rem;
+    padding: 1.9rem;
+    border-radius: 0.9rem;
+  }
+
+  .populaires-title {
+    margin-bottom: 1.9rem;
+  }
+
+  .populaires-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ACTIVITE */
+
+  .activites_wrapper {
+    padding: 1rem 1.9rem;
+  }
+
+  .activites section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 1.5rem;
+  }
+
+  .card--vertical-secondary img {
+    height: 200px;
+  }
+
+  /* FOOTER */
+
+  footer {
+    background: inherit;
+  }
+
+  .footer_wrapper {
+    background: var(--clr-bg-200);
+  }
+
+  .footer_wrapper nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hebergements-and-populaires {
+    flex-direction: row;
+    gap: 2.5rem;
+    margin-inline: 3.1rem;
+  }
+
+  .hebergements_wrapper {
+    margin: 0;
+  }
+
+  .populaires-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .main-container {
+    max-width: 1800px;
+    margin-inline: auto;
+  }
+
+  .activites section {
+    gap: 1.9rem;
+  }
+
+  .populaires_wrapper {
+    margin-inline: 0;
+  }
+
+  .populaires-cards {
+    gap: 1.9rem;
+  }
+
+  .card--vertical-secondary img {
+    height: 380px;
   }
 }
