@@ -263,7 +263,7 @@ body {
   place-content: center;
   background: var(--clr-bg-400);
   width: 3rem;
-  aspect-ratio: 1;
+  height: 3rem;
   border-radius: 1rem 0 0 1rem;
 }
 
@@ -275,15 +275,13 @@ body {
 }
 
 .cta__input::placeholder {
-  padding-left: 1.2rem;
+  padding-left: 1rem;
 }
 
 .cta__search-btn {
   display: grid;
   place-content: center;
   background: var(--clr-primary-400);
-  width: 3rem;
-  aspect-ratio: 1;
   border-radius: 0 1rem 1rem 0;
   box-shadow: none;
   cursor: pointer;
@@ -348,7 +346,7 @@ body {
   display: grid;
   place-content: center;
   height: 1.5rem;
-  aspect-ratio: 1;
+  width: 1.5rem;
   border: 1px solid var(--clr-bg-400);
   border-radius: 100%;
 }
@@ -561,10 +559,17 @@ footer {
     width: 100%;
   }
 
+  .cta__input {
+    width: 50%;
+  }
+
   .cta__search-btn {
     flex: none;
     border-radius: inherit;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    width: 3rem;
+    height: 3rem;
   }
 
   .cta__search-icon {
