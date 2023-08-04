@@ -172,7 +172,7 @@ body {
 /* __caption of card modifiers */
 
 .card--basic-display .card__caption-wrapper {
-  margin: 0.5rem 0.9rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.9rem;
 }
 
 .card--basic-display .card__caption,
@@ -217,13 +217,10 @@ body {
 .main-menu__link {
   flex: 1;
   text-align: center;
-  padding-bottom: 0;
-  border-bottom: none;
 }
 
 .main-menu__link:hover {
   border-top: 2px solid var(--clr-primary-400);
-  border-bottom: none;
   cursor: pointer;
 }
 
@@ -254,7 +251,6 @@ body {
   display: flex;
   border: 1px solid var(--clr-bg-400);
   border-radius: 1.1rem;
-  height: 3rem;
   width: 377px;
 }
 
@@ -283,11 +279,13 @@ body {
   place-content: center;
   background: var(--clr-primary-400);
   border-radius: 0 1rem 1rem 0;
-  box-shadow: none;
-  cursor: pointer;
   border: none;
   scale: 1.02;
   flex: 1;
+}
+
+.cta__search-btn {
+  cursor: pointer;
 }
 
 .cta__search-icon {
@@ -299,7 +297,6 @@ body {
 }
 
 .cta__search-icon--tablet-and-pc {
-  display: block;
   color: var(--clr-bg-100);
   font-weight: var(--fw-bold);
   font-size: var(--fs-600);
@@ -315,8 +312,8 @@ body {
 
 .filters__list li {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
+  gap: 0.5rem;
   font-size: var(--fs-400);
   border-radius: 2rem;
   border: 2px solid var(--clr-bg-400);
@@ -385,7 +382,7 @@ body {
 .hebergements__cta {
   font-size: var(--fs-600);
   font-weight: var(--fw-bold);
-  margin: 1.1rem 0 0;
+  margin: 1.9rem 0 0;
 }
 
 /* POPULAIRES SECTION */
@@ -527,7 +524,7 @@ footer {
   }
 
   .header__logo {
-    margin: 2rem auto 2rem;
+    margin-inline: auto;
   }
 
   .main-menu {
@@ -567,7 +564,6 @@ footer {
     flex: none;
     border-radius: inherit;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
     width: 3rem;
     height: 3rem;
   }
@@ -591,7 +587,6 @@ footer {
 
   .filters__list li {
     font-size: var(--fs-200);
-
     flex: 1;
   }
 
@@ -635,6 +630,10 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     gap: 0.95rem;
+  }
+
+  .hebergements__cta {
+    margin: 1.1rem 0;
   }
 
   /* ACTIVITE SECTION */
